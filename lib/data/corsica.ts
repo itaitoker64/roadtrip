@@ -8,6 +8,7 @@ export const corsica: Destination = {
     "אי הר ההרים — קניונים בצבע טורקיז עם מגלשות סלע, חופי גרניט ורוד ופסגות דרמטיות. פראי, ירוק, ובלתי נשכח.",
   dates: "5–11 ביולי 2026",
   accent: "corsica",
+  heroImage: "Aiguilles de Bavella, Corsica.JPG",
   heroGradient:
     "from-corsica-800 via-corsica-600 to-sand-400",
   why: [
@@ -143,11 +144,11 @@ export const corsica: Destination = {
     { id: "po-old", name: "העיר העתיקה פורטו-וקיו", type: "restaurant", lat: 41.5905, lng: 9.2802, note: "מסעדות וקניות", day: 6 },
   ],
   highlights: [
-    { id: "h1", title: "קניון Purcaraccia", kind: "canyon", blurb: "המגלשות והבריכות המפורסמות של בוואלה." },
-    { id: "h2", title: "חוף Palombaggia", kind: "beach", blurb: "גרניט ורוד, אורנים ומים טורקיז רדודים." },
-    { id: "h3", title: "מחטי Bavella", kind: "viewpoint", blurb: "פסגות גרניט דרמטיות וטרקים הרריים." },
-    { id: "h4", title: "מצוקי בוניפסיו", kind: "viewpoint", blurb: "עיר על מצוק לבן וסירה אל המערות." },
-    { id: "h5", title: "חוף Rondinara", kind: "beach", blurb: "מפרץ עגול בצורת צדפה — מים שקטים." },
+    { id: "h1", title: "קניון Purcaraccia", kind: "canyon", blurb: "המגלשות והבריכות המפורסמות של בוואלה.", image: "Purcaraccia-piscines.JPG" },
+    { id: "h2", title: "חוף Palombaggia", kind: "beach", blurb: "גרניט ורוד, אורנים ומים טורקיז רדודים.", image: "Plage de Palombaggia (Corse-du-Sud).JPG" },
+    { id: "h3", title: "מחטי Bavella", kind: "viewpoint", blurb: "פסגות גרניט דרמטיות וטרקים הרריים.", image: "Aiguilles de Bavella, Corsica.JPG" },
+    { id: "h4", title: "מצוקי בוניפסיו", kind: "viewpoint", blurb: "עיר על מצוק לבן וסירה אל המערות.", image: "Bonifacio cliffs -Le Grain de Sable.JPG" },
+    { id: "h5", title: "חוף Santa Giulia", kind: "beach", blurb: "מפרץ רדוד ושקט עם מים טורקיז — מושלם להורים.", image: "Porto-Vecchio plage de Santa Giulia.jpg" },
     { id: "h6", title: "קניון Pulischellu", kind: "canyon", blurb: "קניון קליל וכיפי שמתאים לכל המשפחה." },
   ],
   stay: {
@@ -163,7 +164,8 @@ export const corsica: Destination = {
     duration: "כ-8.5 שעות דלת-לדלת, קונקשן אחד",
     direct: false,
     note: "אין טיסה ישירה מ-TLV. נדרש קונקשן אחד דרך הוֹב אירופי — לתכנן זמן המתנה נוח ולבדוק כבודה רציפה.",
-    bookingUrl: "https://www.google.com/travel/flights?q=TLV%20to%20FSC%20July%202026",
+    bookingUrl:
+      "https://www.google.com/travel/flights?q=Flights%20from%20TLV%20to%20Figari%20FSC%20on%202026-07-05%20returning%202026-07-11%20round%20trip",
   },
   costs: [
     { label: "טיסות (5 × קונקשן הלוך-חזור)", amount: 3250, note: "~650€ לאדם, עם החלפה" },

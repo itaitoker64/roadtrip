@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabase, isSupabaseConfigured, TABLE } from "./supabase";
 
 /**
@@ -135,38 +128,3 @@ export function useTripState<T>(
 
   return [value, update, { synced: isSupabaseConfigured }];
 }
-
-/* ---------------- PIN gate ---------------- */
-
-interface GateCtx {
-  unlocked: boolean;
-  unlock: (pin: string) => boolean;
-}
-const GateContext = createContext<GateCtx>({ unlocked: false, unlock: () => false });
-
-const PIN = process.env.NEXT_PUBLIC_TRIP_PIN || "2026";
-
-export function GateProvider({ children }: { children: React.ReactNode }) {
-  const [unlocked, setUnlocked] = useState(false);
-
-  useEffect(() => {
-    if (readLocal<boolean>("gate-unlocked", false)) setUnlocked(true);
-  }, []);
-
-  const unlock = useCallback((pin: string) => {
-    if (pin.trim() === PIN) {
-      setUnlocked(true);
-      writeLocal("gate-unlocked", true);
-      return true;
-    }
-    return false;
-  }, []);
-
-  return (
-    <GateContext.Provider value={{ unlocked, unlock }}>
-      {children}
-    </GateContext.Provider>
-  );
-}
-
-export const useGate = () => useContext(GateContext);

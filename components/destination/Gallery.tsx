@@ -1,7 +1,7 @@
 "use client";
 
 import { Highlight, StopType } from "@/lib/data";
-import { Reveal } from "@/components/ui";
+import { Reveal, PhotoBg } from "@/components/ui";
 
 const TILE: Record<string, { from: string; to: string; icon: string }> = {
   beach: { from: "#8fe7ea", to: "#0f97a6", icon: "🏖️" },
@@ -12,19 +12,18 @@ const TILE: Record<string, { from: string; to: string; icon: string }> = {
   airport: { from: "#94a3b8", to: "#475569", icon: "✈️" },
 };
 
-function Tile({ kind }: { kind: StopType }) {
+function Tile({ kind, image, title }: { kind: StopType; image?: string; title: string }) {
   const t = TILE[kind] ?? TILE.viewpoint;
   return (
     <div
-      className="relative h-36 w-full overflow-hidden"
+      className="relative h-44 w-full overflow-hidden"
       style={{ background: `linear-gradient(135deg, ${t.from}, ${t.to})` }}
     >
       <div className="absolute inset-0 opacity-30 mix-blend-overlay [background:radial-gradient(circle_at_30%_20%,white,transparent_45%)]" />
-      <span className="absolute bottom-2 start-3 text-4xl drop-shadow">{t.icon}</span>
-      {/* subtle wave */}
-      <svg className="absolute bottom-0 w-full" viewBox="0 0 400 40" preserveAspectRatio="none">
-        <path d="M0 25 Q100 5 200 25 T400 25 V40 H0 Z" fill="white" opacity="0.18" />
-      </svg>
+      {/* real photo if available, else the gradient art shows through */}
+      <PhotoBg filename={image} alt={title} width={800} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+      <span className="absolute bottom-2 start-3 text-3xl drop-shadow-lg">{t.icon}</span>
     </div>
   );
 }
@@ -35,7 +34,7 @@ export function Gallery({ highlights }: { highlights: Highlight[] }) {
       {highlights.map((h, i) => (
         <Reveal key={h.id} delay={i * 0.05}>
           <div className="group overflow-hidden rounded-2xl border border-sand-200 bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift">
-            <Tile kind={h.kind} />
+            <Tile kind={h.kind} image={h.image} title={h.title} />
             <div className="p-4">
               <h4 className="font-display text-lg font-bold text-ink">{h.title}</h4>
               <p className="mt-1 text-sm text-ink-muted">{h.blurb}</p>

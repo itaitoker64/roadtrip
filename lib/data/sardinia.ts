@@ -8,6 +8,7 @@ export const sardinia: Destination = {
     "חופים בצבע טורקיז בלתי נתפס, קניונים דרמטיים וטיסה ישירה מתל אביב — סרדיניה היא הקלה לוגיסטית עם נוף שלא מאמינים.",
   dates: "5–11 ביולי 2026",
   accent: "sardinia",
+  heroImage: "Cala Goloritzé 1.JPG",
   heroGradient:
     "from-sardinia-700 via-sardinia-500 to-sand-300",
   why: [
@@ -143,12 +144,12 @@ export const sardinia: Destination = {
     { id: "orosei", name: "אורוזאי", type: "restaurant", lat: 40.3789, lng: 9.6939, note: "עיירה עתיקה, קניות", day: 6 },
   ],
   highlights: [
-    { id: "h1", title: "Cala Goloritzé", kind: "beach", blurb: "החוף עם צריח הסלע — מהיפים בעולם, בגישה רגלית בלבד." },
-    { id: "h2", title: "Cala Mariolu", kind: "beach", blurb: "מים בגוון טורקיז-חלב מעל חלוקי לבן זעירים." },
-    { id: "h3", title: "קניון Gorropu", kind: "canyon", blurb: "קירות של 400 מטר — הליכה דרמטית בקרקעית." },
-    { id: "h4", title: "קניונינג בסופרמונטה", kind: "canyon", blurb: "רֶפֶּל, קפיצות ומגלשות סלע בבריכות קרירות." },
-    { id: "h5", title: "מפרץ אורוזאי בסירה", kind: "viewpoint", blurb: "יום הפלגה בין המפרצונים הנסתרים." },
-    { id: "h6", title: "Cala Luna", kind: "beach", blurb: "חוף רחב עם מערות לחקירה ושחייה רגועה." },
+    { id: "h1", title: "Cala Goloritzé", kind: "beach", blurb: "החוף עם צריח הסלע — מהיפים בעולם, בגישה רגלית בלבד.", image: "Cala Goloritzé 1.JPG" },
+    { id: "h2", title: "Cala Mariolu", kind: "beach", blurb: "מים בגוון טורקיז-חלב מעל חלוקי לבן זעירים.", image: "Cala Mariolu 2012.jpg" },
+    { id: "h3", title: "קניון Gorropu", kind: "canyon", blurb: "קירות של 400 מטר — הליכה דרמטית בקרקעית.", image: "Su Gorropu visto dal campo base Su Gorroppu SS125.jpg" },
+    { id: "h4", title: "קניונינג בסופרמונטה", kind: "canyon", blurb: "רֶפֶּל, קפיצות ומגלשות סלע בבריכות קרירות.", image: "Gorropu - interno.JPG" },
+    { id: "h5", title: "מפרץ אורוזאי בסירה", kind: "viewpoint", blurb: "יום הפלגה בין המפרצונים הנסתרים.", image: "Golfo-di-orosei.jpg" },
+    { id: "h6", title: "Cala Luna", kind: "beach", blurb: "חוף רחב עם מערות לחקירה ושחייה רגועה.", image: "Cala Luna, Sardinien.JPG" },
   ],
   stay: {
     base: "קאלה גונונה / דורגאלי",
@@ -163,7 +164,8 @@ export const sardinia: Destination = {
     duration: "כ-3.5 שעות, ישיר",
     direct: true,
     note: "טיסה ישירה עונתית — יתרון לוגיסטי גדול. להזמין מוקדם, מספר תדירויות מוגבל בשבוע.",
-    bookingUrl: "https://www.google.com/travel/flights?q=TLV%20to%20CAG%20July%202026",
+    bookingUrl:
+      "https://www.google.com/travel/flights?q=Flights%20from%20TLV%20to%20Cagliari%20CAG%20on%202026-07-05%20returning%202026-07-11%20round%20trip",
   },
   costs: [
     { label: "טיסות (5 × ישיר הלוך-חזור)", amount: 2750, note: "~550€ לאדם, ישיר" },

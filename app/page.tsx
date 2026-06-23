@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { GateProvider } from "@/lib/store";
 import { Nav, ViewId } from "@/components/layout/Nav";
 import { DestinationView } from "@/components/destination/DestinationView";
 import { DESTINATIONS } from "@/lib/data";
@@ -67,9 +66,8 @@ export default function Home() {
   const t = TITLES[view];
 
   return (
-    <GateProvider>
-      <div data-accent={accent} className="min-h-screen">
-        <Nav active={view} onChange={setView} />
+    <div data-accent={accent} className="min-h-screen">
+      <Nav active={view} onChange={setView} />
 
         <main className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
           {!isDestination && (
@@ -96,9 +94,8 @@ export default function Home() {
 
         <footer className="mt-10 border-t border-sand-200 py-8 text-center text-sm text-ink-muted">
           <p className="font-display text-base font-bold text-ink">מסע 2026 · 5–11 ביולי</p>
-          <p className="mt-1">אני · אח שלי · אבא · אמא · בת הזוג שלי</p>
+          <p className="mt-1">איתי · טליה · גיא · עמית · ענת</p>
         </footer>
       </div>
-    </GateProvider>
   );
 }
