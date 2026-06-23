@@ -1,0 +1,86 @@
+@import "leaflet/dist/leaflet.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #faf7f1;
+  --accent: 15 151 166; /* default sardinia-ish, overridden per scope */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: #1f2421;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* RTL niceties */
+[dir="rtl"] .leaflet-control-container {
+  direction: ltr;
+}
+
+/* Accent theming via data attribute on a wrapper */
+[data-accent="sardinia"] {
+  --accent: 15 151 166;
+  --accent-soft: 232 251 251;
+  --accent-strong: 12 121 134;
+}
+[data-accent="corsica"] {
+  --accent: 58 99 71;
+  --accent-soft: 238 243 238;
+  --accent-strong: 36 63 46;
+}
+[data-accent="neutral"] {
+  --accent: 168 120 74;
+  --accent-soft: 244 237 224;
+  --accent-strong: 135 95 62;
+}
+
+.text-accent { color: rgb(var(--accent)); }
+.bg-accent { background-color: rgb(var(--accent)); }
+.bg-accent-soft { background-color: rgb(var(--accent-soft)); }
+.border-accent { border-color: rgb(var(--accent)); }
+.ring-accent { --tw-ring-color: rgb(var(--accent)); }
+
+/* Editorial display kerning */
+.display {
+  font-feature-settings: "kern" 1;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #d9c39c; border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Leaflet pin label cleanup */
+.leaflet-container { font-family: var(--font-body); z-index: 0; }
+.trip-pin {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px 999px 999px 2px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 16px -4px rgba(0,0,0,.45);
+  border: 2px solid white;
+}
+.trip-pin > * { transform: rotate(-45deg); }
+
+/* Reveal helper for non-motion fallback */
+.reveal { animation: fade-up 0.6s ease-out both; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Print: itinerary hub */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
