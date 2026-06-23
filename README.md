@@ -47,9 +47,8 @@ keys to enable live multi-user sync.
    ```
    NEXT_PUBLIC_SUPABASE_URL=...
    NEXT_PUBLIC_SUPABASE_ANON_KEY=...
-   NEXT_PUBLIC_TRIP_PIN=2026
    ```
-Editing tools are lightly gated behind the shared `NEXT_PUBLIC_TRIP_PIN`.
+All tools are fully open — no login or PIN.
 
 ## ▲ Deploy to Vercel (Git auto-deploy)
 1. Push this repo to GitHub (done).

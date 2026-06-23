@@ -133,7 +133,7 @@ export function DestinationView({ d }: { d: Destination }) {
                 {d.flight.note}
               </p>
               <Button href={d.flight.bookingUrl} variant="soft" className="mt-3" size="sm">
-                חיפוש טיסות <ExternalLink size={14} />
+                פתחו ב-Google Flights <ExternalLink size={14} />
               </Button>
             </Card>
           </Reveal>

@@ -57,6 +57,7 @@ export interface Highlight {
   title: string;
   kind: StopType;
   blurb: string;
+  image?: string; // Wikimedia Commons filename
 }
 
 export interface Destination {
@@ -66,6 +67,7 @@ export interface Destination {
   pitch: string;
   dates: string;
   accent: "corsica" | "sardinia";
+  heroImage?: string; // Wikimedia Commons filename for the hero photo
   heroGradient: string; // tailwind gradient classes for the cinematic hero
   why: { title: string; text: string }[];
   itinerary: ItineraryDay[];

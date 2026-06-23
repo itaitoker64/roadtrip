@@ -7,8 +7,8 @@ create table if not exists public.trip_state (
   updated_at timestamptz not null default now()
 );
 
--- Light gating only (shared PIN in the app). Open policies for the anon key so
--- all 5 family members can collaborate without per-user auth.
+-- Open access (no auth/PIN). Open policies for the anon key so all 5 family
+-- members can collaborate freely without per-user auth.
 alter table public.trip_state enable row level security;
 
 drop policy if exists "trip_state read"  on public.trip_state;

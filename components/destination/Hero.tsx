@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Destination } from "@/lib/data";
 import { HeroScene } from "@/components/layout/HeroScene";
-import { Badge } from "@/components/ui";
+import { Badge, PhotoBg } from "@/components/ui";
 import { CalendarDays, MapPin, Plane } from "lucide-react";
 
 export function Hero({ d }: { d: Destination }) {
@@ -11,8 +11,10 @@ export function Hero({ d }: { d: Destination }) {
     <div className="relative overflow-hidden rounded-3xl shadow-lift">
       <div className="relative h-[460px] sm:h-[540px]">
         <HeroScene variant={d.accent} />
+        {/* real location photo on top of the vector scene (falls back to scene) */}
+        <PhotoBg filename={d.heroImage} alt={d.name} width={1600} />
         {/* legibility gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
 
         <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12">
           <motion.div

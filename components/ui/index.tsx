@@ -1,10 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import { commonsImg } from "@/lib/images";
 
 export function cn(...parts: (string | false | null | undefined)[]) {
   return parts.filter(Boolean).join(" ");
+}
+
+/**
+ * Real location photo that covers its parent. Renders nothing if no filename is
+ * given or the image fails to load, so the caller's fallback art shows through.
+ */
+export function PhotoBg({
+  filename,
+  alt,
+  width = 1200,
+  className,
+}: {
+  filename?: string;
+  alt: string;
+  width?: number;
+  className?: string;
+}) {
+  const [ok, setOk] = useState(true);
+  if (!filename || !ok) return null;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={commonsImg(filename, width)}
+      alt={alt}
+      loading="lazy"
+      onError={() => setOk(false)}
+      className={cn("absolute inset-0 h-full w-full object-cover", className)}
+    />
+  );
 }
 
 /* Reveal-on-scroll wrapper */

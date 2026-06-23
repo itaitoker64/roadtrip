@@ -52,7 +52,7 @@ export function Flights() {
                 <span>{d.car}</span>
               </div>
               <Button href={d.flight.bookingUrl} variant="soft" className="mt-4" size="sm">
-                חיפוש והזמנת טיסות <ExternalLink size={14} />
+                פתחו ב-Google Flights <ExternalLink size={14} />
               </Button>
             </Card>
           </Reveal>
