@@ -17,6 +17,19 @@ body {
   color: #1f2421;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
+  /* viewport-fit=cover draws under the status bar and the gesture pill; pad the
+     content back inside them. Resolves to 0 outside the native app. */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+
+  /* Stop the WebView's rubber-band overscroll and pull-to-refresh. */
+  overscroll-behavior-y: none;
+}
+
+/* The WebView paints its own tap highlight over the app's focus styles. */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* RTL niceties */

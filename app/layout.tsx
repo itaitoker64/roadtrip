@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Heebo, Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
+import { NativeShell } from "@/components/NativeShell";
 
 const body = Heebo({
   subsets: ["hebrew", "latin"],
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#0f97a6",
+  // Let content run under the status bar and gesture pill; globals.css pads it
+  // back out with the safe-area insets. targetSdk 36 makes this mandatory.
+  viewportFit: "cover",
   width: "device-width",
   initialScale: 1,
 };
@@ -34,7 +38,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" className={`${body.variable} ${display.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <NativeShell />
+        {children}
+      </body>
     </html>
   );
 }
